@@ -9,23 +9,24 @@ using Microsoft.EntityFrameworkCore;
 using BooksWebApp.Data;
 using BooksWebApp.Model;
 
-namespace BooksWebApp.Pages.admin
+namespace BooksWebApp.Pages.admin.Books
 {
-    public class DetailsModel : PageModel
+    public class DeleteModel : PageModel
     {
         private readonly BooksWebApp.Data.MyDbContext _context;
 
-        public DetailsModel(BooksWebApp.Data.MyDbContext context)
+        public DeleteModel(BooksWebApp.Data.MyDbContext context)
         {
             _context = context;
         }
 
+        [BindProperty]
         public Book Book { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
-            { 
+            {
                 return NotFound();
             }
 
@@ -36,6 +37,24 @@ namespace BooksWebApp.Pages.admin
                 return NotFound();
             }
             return Page();
+        }
+
+        public async Task<IActionResult> OnPostAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            Book = await _context.Books.FindAsync(id);
+
+            if (Book != null)
+            {
+                _context.Books.Remove(Book);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToPage("./Index");
         }
     }
 }

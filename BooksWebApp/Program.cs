@@ -7,15 +7,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+.AddCookie(options => { options.LoginPath = "/admin/Index"; });
 builder.Services.AddRazorPages();
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options => builder.Configuration.Bind("JwtSettings", options))
-    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => builder.Configuration.Bind("CookieSettings", options));
 builder.Services.AddDbContext<MyDbContext>(options =>
 options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
+app.UseAuthentication();
+app.UseAuthorization();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

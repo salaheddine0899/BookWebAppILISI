@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using BooksWebApp.Data;
 using BooksWebApp.Model;
 
-namespace BooksWebApp.Pages.admin
+namespace BooksWebApp.Pages.admin.Books
 {
     public class CreateModel : PageModel
     {

@@ -1,30 +1,37 @@
-﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using BooksWebApp.Data;
-using BooksWebApp.Model;
+using System.Security.Claims;
 
 namespace BooksWebApp.Pages.admin
 {
     public class IndexModel : PageModel
     {
-        private readonly BooksWebApp.Data.MyDbContext _context;
-
-        public IndexModel(BooksWebApp.Data.MyDbContext context)
+        public IActionResult OnGet()
         {
-            _context = context;
+            return Page();
         }
 
-        public IList<Book> Book { get;set; }
-
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnPost(string username, string password, string ReturnUrl)
         {
-            Book = await _context.Books.ToListAsync();
+            if (username == "admin")
+            {
+                if (password == "admin")
+                {
+                    var claims = new List<Claim>{
+                    new Claim(ClaimTypes.Name, username)
+                    };
+
+                    var claimsIdentity = new ClaimsIdentity(claims, "Login");
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.
+                    AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+                    return Redirect(ReturnUrl == null ? "/Admin/Books" : ReturnUrl);
+                }
+            }
+            return Page();
         }
     }
 }
+

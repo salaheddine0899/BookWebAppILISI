@@ -15,20 +15,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\pc\Documents\.net\BooksWebApp\BooksWebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/pc/Documents/.net/BooksWebApp/BooksWebApp/Pages/admin/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQ3JlYXRlLmNzaHRtbA==
+[C:/Users/pc/Documents/.net/BooksWebApp/BooksWebApp/Pages/admin/Books/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQm9va3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pc/Documents/.net/BooksWebApp/BooksWebApp/Pages/admin/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cRGVsZXRlLmNzaHRtbA==
+[C:/Users/pc/Documents/.net/BooksWebApp/BooksWebApp/Pages/admin/Books/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQm9va3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pc/Documents/.net/BooksWebApp/BooksWebApp/Pages/admin/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cRGV0YWlscy5jc2h0bWw=
+[C:/Users/pc/Documents/.net/BooksWebApp/BooksWebApp/Pages/admin/Books/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQm9va3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pc/Documents/.net/BooksWebApp/BooksWebApp/Pages/admin/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cRWRpdC5jc2h0bWw=
+[C:/Users/pc/Documents/.net/BooksWebApp/BooksWebApp/Pages/admin/Books/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQm9va3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pc/Documents/.net/BooksWebApp/BooksWebApp/Pages/admin/Books/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQm9va3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pc/Documents/.net/BooksWebApp/BooksWebApp/Pages/admin/Index.cshtml]

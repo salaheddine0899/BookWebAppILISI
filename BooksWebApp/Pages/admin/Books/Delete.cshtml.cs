@@ -11,6 +11,7 @@ using BooksWebApp.Model;
 
 namespace BooksWebApp.Pages.admin.Books
 {
+    [Authorize]
     public class DeleteModel : PageModel
     {
         private readonly BooksWebApp.Data.MyDbContext _context;

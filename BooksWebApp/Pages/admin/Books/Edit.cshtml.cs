@@ -9,9 +9,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BooksWebApp.Data;
 using BooksWebApp.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BooksWebApp.Pages.admin.Books
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly BooksWebApp.Data.MyDbContext _context;

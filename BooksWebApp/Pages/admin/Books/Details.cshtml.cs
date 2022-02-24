@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BooksWebApp.Data;
 using BooksWebApp.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BooksWebApp.Pages.admin.Books
 {
+    [Authorize]
     public class DetailsModel : PageModel
     {
         private readonly BooksWebApp.Data.MyDbContext _context;
